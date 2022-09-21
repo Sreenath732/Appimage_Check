@@ -1,0 +1,22 @@
+version: 2.1
+jobs:
+  build:
+    machine:
+      enabled: true
+      # Use Ubuntu 14.04 with bleeding edge Docker daemon 17.06.0-ce.
+      image: ubuntu-2004:202201-02 
+    steps:
+        - checkout
+        - run:
+            name: The First Step for demo
+            command: |
+              echo 'Hello World!'
+              echo 'This is the delivery pipeline'
+        - checkout
+        - run:
+            name: Installing g++
+            command: sudo apt-get update && sudo apt-get install build-essential 
+        - checkout
+        - run:
+            name: run permissions for project
+            command: sudo chmod 777 * 
