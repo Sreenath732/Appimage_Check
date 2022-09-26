@@ -20,3 +20,7 @@ jobs:
         - run:
             name: run permissions for project
             command: sudo chmod 777 * 
+        - checkout
+        - run:
+            name: run permissions for project
+            command: bash DataLoggerPilot-x86_64.AppImage
